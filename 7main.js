@@ -1,10 +1,14 @@
 function update(dt) {
+  const prevBottom = player.y + player.h;
   updatePlayer(dt);
+  updateEnemies(dt);
+  collideWithEnemies(prevBottom);
 }
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawStage();
+  drawEnemies();
   drawPlayer();
 }
 
